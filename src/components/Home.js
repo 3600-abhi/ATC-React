@@ -3,10 +3,10 @@ import { Header } from "../components";
 
 function Home() {
     return (
-        <>
+        <div className="h-screen bg-c4">
             <Header />
             <Outlet />
-        </>
+        </div>
     );
 }
 

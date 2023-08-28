@@ -10,9 +10,19 @@ import Body from "./Body";
 import SoldRecordCard from "./SoldRecordCard";
 import Loader from "./Loader";
 import SoldRecordDetails from "./SoldRecordDetails";
+import CreateSoldRecord from "./CreateSoldRecord";
+import PurchaseRecord from "./PurchaseRecord";
+import PurchaseUsingNormalKanta from "./PurchaseUsingNormalKanta";
+import PurchaseUsingDharamKanta from "./PurchaseUsingDharamKanta";
+import ChooseKanta from "./ChooseKanta";
 
 
 export {
+    ChooseKanta,
+    PurchaseUsingDharamKanta,
+    PurchaseUsingNormalKanta,
+    PurchaseRecord,
+    CreateSoldRecord,
     SoldRecordDetails,
     Loader,
     Signin,

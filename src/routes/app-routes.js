@@ -1,5 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
-import { App, SoldRecords, Bills, Body, Home, SoldRecordDetails } from "../components";
+import {
+    App,
+    SoldRecords,
+    Bills,
+    Body,
+    Home,
+    SoldRecordDetails,
+    CreateSoldRecord,
+    PurchaseRecord,
+    PurchaseUsingNormalKanta,
+    PurchaseUsingDharamKanta
+} from "../components";
 
 const appRouter = createBrowserRouter([
     {
@@ -15,6 +26,18 @@ const appRouter = createBrowserRouter([
                 element: <Body />
             },
             {
+                path: "purchase-records",
+                element: <PurchaseRecord />
+            },
+            {
+                path: "purchase-records/with-normal-kanta",
+                element: <PurchaseUsingNormalKanta />
+            },
+            {
+                path: "purchase-records/with-dharam-kanta",
+                element: <PurchaseUsingDharamKanta />
+            },
+            {
                 path: "sold-records",
                 element: <SoldRecords />
             },
@@ -25,6 +48,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "bills",
                 element: <Bills />
+            },
+            {
+                path: "sold-records/create",
+                element: <CreateSoldRecord />
             }
         ]
 

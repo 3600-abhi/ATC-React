@@ -20,24 +20,36 @@ function SoldRecords() {
     }, []);
 
     return (
-        <div>
+        <>
             {
                 isLoading
                     ?
                     <Loader />
                     :
                     (
-                        soldRecordsList.map(record => (
-                            <Link to={"/home/sold-records/" + record._id} key={record._id}>
-                                <SoldRecordCard  {...record} />
+                        <div>
+
+                            {
+                                soldRecordsList.map(record => (
+                                    <Link to={"/home/sold-records/" + record._id} key={record._id}>
+                                        <SoldRecordCard  {...record} />
+                                    </Link>
+                                ))
+                            }
+
+                            <Link to="/home/sold-records/create">
+                                <button
+                                    className="fixed bottom-0 right-0 bg-c1 text-white p-3 m-3 rounded-lg">
+                                    Add
+                                </button>
                             </Link>
 
-                        ))
+                        </div>
                     )
 
             }
 
-        </div>
+        </>
     );
 }
 

@@ -30,14 +30,14 @@ function Signin() {
                     :
                     (
                         <div
-                            className="h-screen flex-col fixed top-1/3 left-1/3 font-bold">
+                            className="flex-col fixed top-1/4 left-1/3 p-10">
 
-                            <h1 className="text-5xl m-5">Login to your Account</h1>
+                            <h1 className="text-5xl m-5 text-c1 font-semibold">Login to your Account</h1>
 
                             <div className="m-8 flex justify-center">
                                 <input
-                                    className="border-2 h-10 w-96 border-black p-3 rounded-lg"
-                                    type="text"
+                                    className="border-2 h-10 w-96 border-c1 p-3 rounded-lg text-c1 font-semibold"
+                                    type="email"
                                     placeholder="Email"
                                     value={email}
                                     onChange={e => setEmail(e.target.value)}
@@ -46,7 +46,7 @@ function Signin() {
 
                             <div className="m-8 flex justify-center">
                                 <input
-                                    className="border-2 h-10 w-96  border-black p-3 rounded-lg"
+                                    className="border-2 h-10 w-96 border-c1 p-3 rounded-lg text-c1 font-semibold"
                                     type="password"
                                     placeholder="Password"
                                     value={password}
@@ -56,7 +56,7 @@ function Signin() {
 
                             <div className="m-8 flex justify-center">
                                 <button
-                                    className="bg-yellow-500 p-3 text-white rounded-md hover:bg-yellow-600"
+                                    className="bg-c1 p-3 text-white rounded-md hover:bg-c2"
                                     onClick={() => handleSigninClick()}
                                 >Sign In</button>
                             </div>
