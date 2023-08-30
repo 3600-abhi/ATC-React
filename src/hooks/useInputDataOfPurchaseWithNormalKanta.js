@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Enums } from "../utils";
+import { Enums, Constant } from "../utils";
 
-
+const { LABOUR_COST_PER_QUINTAL } = Constant;
 
 const calculateNetWeight = (bundleWt, bundles, remWt) => {
     const wt = ((bundleWt - 1.5) * bundles) + (remWt > 0 ? (remWt - 1) : 0);
@@ -9,8 +9,7 @@ const calculateNetWeight = (bundleWt, bundles, remWt) => {
 }
 
 const calculateLabourCost = (netWt) => {
-    const labourCostPerQuintal = 16;
-    const labourCost = labourCostPerQuintal * (netWt / 100);
+    const labourCost = LABOUR_COST_PER_QUINTAL * (netWt / 100);
     return Math.ceil(labourCost);
 }
 
@@ -83,11 +82,9 @@ function useInputDataOfPurchaseWithNormalKanta() {
         payable_amount: ""
     });
 
-    console.log("to");
-
     handleAutoFill(inputData);
 
-    console.log(inputData);
+    // console.log(inputData);
 
 
     return [inputData, setInputData];

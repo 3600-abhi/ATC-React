@@ -1,53 +1,37 @@
 import { useState } from "react";
 import { Enums } from "../utils";
 import { useInputDataOfPurchaseWithNormalKanta } from "../hooks";
+import { PurchaseRecordsApi } from "../api";
+import { Modal, Loader } from "../components";
+
+
 
 function PurchaseUsingNormalKanta() {
-    // const labourCostPerQuintal = 16;
-
-    // const [inputData, setInputData] = useState({
-    //     seller_name: "",
-    //     seller_address: "",
-    //     goods_name: "",
-    //     bundle_weight_per_kg: "60",
-    //     number_of_bundles: "",
-    //     remaining_weight_in_kg: "",
-    //     net_goods_weight_in_kg: "",
-    //     price_per_quintal: "",
-    //     goods_cost: "",
-    //     labour_cost: "",
-    //     payable_amount: ""
-    // });
-
-    const handleClickSave = async () => { };
-
-    // const handleAutoFill = (remWt) => {
-    //     const netGoodsWt = Math.floor(((inputData.bundle_weight_per_kg - 1.5) * inputData.number_of_bundles) + (remWt - 1));
-    //     const goodsCost = Math.floor(inputData.price_per_quintal * (netGoodsWt / 100));
-    //     const labourCost = Math.ceil(labourCostPerQuintal * (netGoodsWt / 100));
-    //     const payableAmount = goodsCost - labourCost;
-
-    //     setInputData({
-    //         ...inputData,
-    //         remaining_weight_in_kg: remWt,
-    //         net_goods_weight_in_kg: netGoodsWt,
-    //         goods_cost: goodsCost,
-    //         labour_cost: labourCost,
-    //         payable_amount: payableAmount
-    //     });
-    // }
-
-
-    // const handleChange = (e) => {
-    //     setInputData({...inputData, seller_name: e.target.value});
-    //     console.warn(inputData);
-    // }
-
-    console.log("from");
-
-
 
     const [inputData, setInputData] = useInputDataOfPurchaseWithNormalKanta();
+    const [showModal, setShowModal] = useState(false);
+    const [showLoader, setShowLoader] = useState(false);
+    const [modalMessage, setModalMessage] = useState("");
+
+
+    const handleClickSave = async () => {
+
+        setShowLoader(true);
+
+        const response = await PurchaseRecordsApi.createPurchaseRecord({
+            ...inputData,
+            weight_on_kanta_type: Enums.KANTA_TYPE.NORMAL_KANTA
+        });
+
+        setShowLoader(false);
+        setShowModal(true);
+        setModalMessage(response.message);
+
+        setTimeout(() => {
+            setShowModal(false);
+        }, 2000);
+
+    };
 
     const handleInputChange = (e) => {
         setInputData({
@@ -60,6 +44,18 @@ function PurchaseUsingNormalKanta() {
 
     return (
         <div className="bg-c3 p-5">
+
+            {
+                showModal
+                &&
+                <Modal modalMessage={modalMessage} setShowModal={setShowModal} />
+            }
+
+            {
+                showLoader
+                &&
+                <Loader />
+            }
 
             <div className="p-10 flex justify-around">
 
@@ -275,7 +271,7 @@ function PurchaseUsingNormalKanta() {
 
             <div className="flex justify-center m-5">
                 <button
-                    className="bg-c1 text-white p-4 rounded-lg"
+                    className="bg-c1 text-white p-4 rounded-lg hover:bg-c2"
                     onClick={() => handleClickSave()}
                 >
                     Save

@@ -27,7 +27,7 @@ function SoldRecordDetails() {
 
                             <div className="p-2 m-1 flex justify-between">
                                 <h1 className="font-bold text-4xl text-c1">{record.firm_name}</h1>
-                                <h1 className="text-c1 font-bold">Date : {Helper.formatDate(record.createdAt)}</h1>
+                                <h1 className="text-c1 font-bold">Date : {Helper.formatDateInDDMMYYYY(record.createdAt)}</h1>
                             </div>
 
 

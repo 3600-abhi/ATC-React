@@ -11,7 +11,13 @@ const GOODS_NAME = {
     PADDY_MOTA: "PADDY (MOTA)"
 }
 
+const KANTA_TYPE = {
+    NORMAL_KANTA: "NORMAL_KANTA",
+    DHARAM_KANTA: "DHARAM_KANTA"
+}
+
 export default {
     PAYMENT_STATUS,
-    GOODS_NAME
+    GOODS_NAME,
+    KANTA_TYPE
 }

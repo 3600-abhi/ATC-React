@@ -32,7 +32,7 @@ function Header() {
                     ?
 
                     <button
-                        className="bg-c1 text-white m-5 p-2 rounded-lg hover:bg-yellow-600"
+                        className="bg-c1 text-white m-5 p-2 rounded-lg hover:bg-c2"
                         onClick={() => handleSignoutClick()} >
                         Sign Out
                     </button>
@@ -40,7 +40,7 @@ function Header() {
                     :
 
                     <button
-                        className="bg-c1 text-white m-5 p-2 rounded-lg hover:bg-yellow-600">
+                        className="bg-c1 text-white m-5 p-2 rounded-lg hover:bg-c2">
                         Sign In
                     </button>
 

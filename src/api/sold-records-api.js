@@ -5,8 +5,6 @@ import { Constant } from "../utils";
 
 async function createSoldRecord(data) {
     try {
-        console.log("data : ", data);
-
         const token = localStorage.getItem(Constant.TOKEN);
 
         const response = await axios.post(

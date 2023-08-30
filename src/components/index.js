@@ -1,6 +1,5 @@
 import Signin from "./Signin";
 import Header from "./Header";
-import Footer from "./Footer";
 import SoldRecords from "./SoldRecords";
 import Bills from "./Bills";
 import Home from "./Home";
@@ -15,9 +14,11 @@ import PurchaseRecord from "./PurchaseRecord";
 import PurchaseUsingNormalKanta from "./PurchaseUsingNormalKanta";
 import PurchaseUsingDharamKanta from "./PurchaseUsingDharamKanta";
 import ChooseKanta from "./ChooseKanta";
+import Modal from "./Modal";
 
 
 export {
+    Modal,
     ChooseKanta,
     PurchaseUsingDharamKanta,
     PurchaseUsingNormalKanta,
@@ -27,7 +28,6 @@ export {
     Loader,
     Signin,
     Header,
-    Footer,
     SoldRecords,
     Bills,
     Home,

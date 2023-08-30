@@ -6,7 +6,7 @@ function SoldRecordCard(props) {
 
             <div className="flex justify-between">
                 <h1 className="m-2 text-3xl font-bold text-c1">{props.firm_name}</h1>
-                <h2 className="m-2 font-bold text-c1">Date: {Helper.formatDate(props.createdAt)}</h2>
+                <h2 className="m-2 font-bold text-c1">Date: {Helper.formatDateInDDMMYYYY(props.createdAt)}</h2>
             </div>
 
             <h2 className="m-2 font-semibold text-c1">Product: {props.goods_name}</h2>
