@@ -11,11 +11,11 @@ async function signin(user) {
             }
         );
 
-        console.log("backend-response : ", response.data);
 
         return response.data;
     } catch (error) {
         console.log(error);
+        return error.response.data;
     }
 }
 

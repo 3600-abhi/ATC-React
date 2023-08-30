@@ -1,7 +1,7 @@
 function Bills() {
     return (
         <div>
-            <h1 className="font-bold text-2xl m-5">Welcome to Bills</h1>
+            <h1 className="font-bold text-3xl m-10 text-c1">Feature coming soon !!</h1>
         </div>
     );
 }

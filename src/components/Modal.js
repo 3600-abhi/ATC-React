@@ -1,7 +1,7 @@
 function Modal({modalMessage, setShowModal}) {
     return (
         <div
-            className="bg-white fixed top-1/3 left-1/3 p-10 rounded-lg shadow-lg">
+            className="bg-nc1 fixed top-1/3 left-1/3 p-10 rounded-lg shadow-lg z-50">
 
             <h1
                 className="text-c1 font-bold text-2xl m-10">

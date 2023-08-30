@@ -118,9 +118,9 @@ function PurchaseRecord() {
                             </div>
 
                             <div className="flex justify-between m-2">
-                                <h1>Goods Cost: {data.goods_cost}</h1>
-                                <h1>Labour Cost: {data.labour_cost}</h1>
-                                <h1>Payable Amount: {data.payable_amount}</h1>
+                                <h1>Goods Cost: {data.goods_cost} ₹</h1>
+                                <h1>Labour Cost: {data.labour_cost} ₹</h1>
+                                <h1>Payable Amount: {data.payable_amount} ₹</h1>
                             </div>
 
                         </div>

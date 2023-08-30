@@ -2,29 +2,53 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserApi } from "../api";
 import { Constant } from "../utils";
-import { Loader } from "../components";
+import { Loader, Modal } from "../components";
 
 function Signin() {
 
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [isLoading, setIsLoading] = useState(false);
+    const [showLoading, setShowLoading] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const [modalMessage, setModalMessage] = useState("");
     const navigate = useNavigate();
 
 
     const handleSigninClick = async () => {
-        setIsLoading(true);
-        const data = await UserApi.signin({ email, password });
-        localStorage.setItem(Constant.TOKEN, data.data.token);
-        setIsLoading(false);
-        navigate("/home");
+        try {
+            setShowLoading(true);
+            const response = await UserApi.signin({ email, password });
+            setShowLoading(false);
+
+            if (response.success) {
+                localStorage.setItem(Constant.TOKEN, response.data.token);
+                navigate("/home");
+            }
+            else {
+                console.log(response.error.explanation);
+                setModalMessage(response.error.explanation);
+                setShowModal(true);
+                setTimeout(() => setShowModal(false), 2000);
+            }
+        } catch (error) {
+            console.log(error);
+        }
     }
 
 
     return (
-        <>
+        <div>
+
             {
-                isLoading
+                showModal
+                &&
+                <Modal modalMessage={modalMessage} setShowModal={setShowModal} />
+            }
+
+
+            {
+                showLoading
                     ?
                     <Loader />
                     :
@@ -64,7 +88,7 @@ function Signin() {
                         </div>
                     )
             }
-        </>
+        </div>
     );
 }
 
