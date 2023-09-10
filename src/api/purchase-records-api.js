@@ -17,8 +17,6 @@ async function createPurchaseRecord(data) {
             }
         );
 
-        console.log("create-purchase-response:", response.data);
-
         return response.data;
     } catch (error) {
         console.log(error);
@@ -28,6 +26,7 @@ async function createPurchaseRecord(data) {
 
 async function getPurchaseRecordsDetails(date) {
     try {
+        console.log("date: ", date);
         const token = localStorage.getItem(Constant.TOKEN);
 
         const response = await axios.get(

@@ -25,10 +25,7 @@ const calculatePayableAmount = (goodsCost, labourCost) => {
 
 const handleAutoFill = (inputData) => {
 
-    if (
-        inputData.goods_name !== "" &&
-        inputData.current_change === "goods_name"
-    ) {
+    if (inputData.goods_name !== "" && inputData.bundle_weight_in_kg === "") {
 
         if (inputData.goods_name === Enums.GOODS_NAME.WHEAT || inputData.GOODS_NAME === Enums.GOODS_NAME.RICE) {
             inputData.bundle_weight_in_kg = "60";
@@ -68,7 +65,6 @@ const handleAutoFill = (inputData) => {
 function useInputDataOfPurchaseWithNormalKanta() {
 
     const [inputData, setInputData] = useState({
-        current_change: "",
         seller_name: "",
         seller_address: "",
         goods_name: "",
@@ -84,7 +80,7 @@ function useInputDataOfPurchaseWithNormalKanta() {
 
     handleAutoFill(inputData);
 
-    // console.log(inputData);
+    console.log(inputData);
 
 
     return [inputData, setInputData];

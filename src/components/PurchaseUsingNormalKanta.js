@@ -15,7 +15,6 @@ function PurchaseUsingNormalKanta() {
 
 
     const handleClickSave = async () => {
-
         setShowLoader(true);
 
         const response = await PurchaseRecordsApi.createPurchaseRecord({
@@ -27,10 +26,7 @@ function PurchaseUsingNormalKanta() {
         setShowModal(true);
         setModalMessage(response.message);
 
-        setTimeout(() => {
-            setShowModal(false);
-        }, 2000);
-
+        setTimeout(() => setShowModal(false), 2000);
     };
 
     const handleInputChange = (e) => {
@@ -57,9 +53,9 @@ function PurchaseUsingNormalKanta() {
                 <Loader />
             }
 
-            <div className="p-10 flex justify-around">
+            <div className="p-10 grid grid-cols-4">
 
-                <div>
+                <div className="m-5 flex flex-col ">
                     <label
                         htmlFor="seller_name"
                         className="text-c1 font-bold">
@@ -69,7 +65,7 @@ function PurchaseUsingNormalKanta() {
                     <input
                         id="seller_name"
                         type="text"
-                        className="border-2 outline-c1 mx-2 h-8 p-2 rounded-md text-c1 font-semibold focus:outline-c1"
+                        className="border-2 outline-c1 h-8 p-2 rounded-md text-c1 font-semibold focus:outline-c1"
                         name="seller_name"
                         value={inputData.seller_name}
                         onChange={e => handleInputChange(e)}
@@ -78,7 +74,7 @@ function PurchaseUsingNormalKanta() {
                 </div>
 
 
-                <div>
+                <div className="m-5  flex flex-col">
                     <label
                         htmlFor="seller_address"
                         className="text-c1 font-bold">
@@ -88,7 +84,7 @@ function PurchaseUsingNormalKanta() {
                     <input
                         id="seller_address"
                         type="text"
-                        className="border-2 outline-c1 mx-2 h-8 p-2 rounded-md text-c1 font-semibold focus:outline-c1"
+                        className="border-2 outline-c1 h-8 p-2 rounded-md text-c1 font-semibold focus:outline-c1"
                         name="seller_address"
                         value={inputData.seller_address}
                         onChange={e => handleInputChange(e)}
@@ -96,7 +92,7 @@ function PurchaseUsingNormalKanta() {
 
                 </div>
 
-                <div>
+                <div className="m-5 flex flex-col">
                     <label
                         htmlFor="goods_name"
                         className="text-c1 font-bold"
@@ -104,7 +100,7 @@ function PurchaseUsingNormalKanta() {
                     </label>
 
                     <select
-                        className="border-2 outline-c1 mx-2 h-8 p-x-2 rounded-md text-c1 font-semibold focus:outline-c1"
+                        className="border-2 outline-c1 h-8 p-x-2 rounded-md text-c1 font-semibold focus:outline-c1"
                         id="goods_name"
                         name="goods_name"
                         value={inputData.goods_name}
@@ -124,7 +120,7 @@ function PurchaseUsingNormalKanta() {
                     </select>
                 </div>
 
-                <div>
+                <div className="m-5  flex flex-col">
                     <label
                         htmlFor="price_per_quintal"
                         className="text-c1 font-bold">
@@ -134,17 +130,14 @@ function PurchaseUsingNormalKanta() {
                     <input
                         id="price_per_quintal"
                         type="number"
-                        className="border-2 outline-c1 mx-2 h-8 p-2 rounded-md text-c1 font-semibold focus:outline-c1"
+                        className="border-2 outline-c1 h-8 p-2 rounded-md text-c1 font-semibold focus:outline-c1"
                         name="price_per_quintal"
                         value={inputData.price_per_quintal}
                         onChange={e => handleInputChange(e)}
                     />
                 </div>
-            </div>
 
-            <div className="p-10 flex justify-around">
-
-                <div>
+                <div className="m-5 flex flex-col">
                     <label
                         htmlFor="bundle_weight"
                         className="text-c1 font-bold">
@@ -154,14 +147,14 @@ function PurchaseUsingNormalKanta() {
                     <input
                         id="bundle_weight"
                         type="number"
-                        className="border-2 outline-c1 mx-2 h-8 p-2 rounded-md text-c1 font-semibold focus:outline-c1"
+                        className="border-2 outline-c1 h-8 p-2 rounded-md text-c1 font-semibold focus:outline-c1"
                         name="bundle_weight_in_kg"
                         value={inputData.bundle_weight_in_kg}
                         onChange={e => handleInputChange(e)}
                     />
                 </div>
 
-                <div>
+                <div className="m-5 flex flex-col">
                     <label
                         htmlFor="bundle_weight"
                         className="text-c1 font-bold">
@@ -171,14 +164,14 @@ function PurchaseUsingNormalKanta() {
                     <input
                         id="number_of_bundles"
                         type="number"
-                        className="border-2 outline-c1 mx-2 h-8 p-2 rounded-md text-c1 font-semibold focus:outline-c1"
+                        className="border-2 outline-c1 h-8 p-2 rounded-md text-c1 font-semibold focus:outline-c1"
                         name="number_of_bundles"
                         value={inputData.number_of_bundles}
                         onChange={e => handleInputChange(e)}
                     />
                 </div>
 
-                <div>
+                <div className="m-5 flex flex-col">
                     <label
                         htmlFor="remaining_weight"
                         className="text-c1 font-bold">
@@ -188,14 +181,14 @@ function PurchaseUsingNormalKanta() {
                     <input
                         id="remaining_weight"
                         type="number"
-                        className="border-2 outline-c1 mx-2 h-8 p-2 rounded-md text-c1 font-semibold focus:outline-c1"
+                        className="border-2 outline-c1 h-8 p-2 rounded-md text-c1 font-semibold focus:outline-c1"
                         name="remaining_weight_in_kg"
                         value={inputData.remaining_weight_in_kg}
                         onChange={e => handleInputChange(e)}
                     />
                 </div>
 
-                <div>
+                <div className="m-5 flex flex-col">
                     <label
                         htmlFor="net_goods_weight"
                         className="text-c1 font-bold">
@@ -206,16 +199,14 @@ function PurchaseUsingNormalKanta() {
                         disabled
                         id="net_goods_weight"
                         type="number"
-                        className="border-2 outline-c1 mx-2 h-8 p-2 rounded-md text-c1 font-semibold focus:outline-c1"
+                        className="border-2 outline-c1 h-8 p-2 rounded-md text-c1 font-semibold focus:outline-c1"
                         name="net_goods_weight_in_kg"
                         value={inputData.net_goods_weight_in_kg}
                     />
                 </div>
-            </div>
 
-            <div className="p-10 flex justify-around">
 
-                <div>
+                <div className="m-5 flex flex-col">
                     <label
                         htmlFor="goods_cost"
                         className="text-c1 font-bold">
@@ -226,13 +217,13 @@ function PurchaseUsingNormalKanta() {
                         disabled
                         id="goods_cost"
                         type="number"
-                        className="border-2 outline-c1 mx-2 h-8 p-2 rounded-md text-c1 font-semibold focus:outline-c1"
+                        className="border-2 outline-c1 h-8 p-2 rounded-md text-c1 font-semibold focus:outline-c1"
                         name="goods_cost"
                         value={inputData.goods_cost}
                     />
                 </div>
 
-                <div>
+                <div className="m-5 flex flex-col">
                     <label
                         htmlFor="labour_cost"
                         className="text-c1 font-bold">
@@ -243,14 +234,14 @@ function PurchaseUsingNormalKanta() {
                         disabled
                         id="labour_cost"
                         type="number"
-                        className="border-2 outline-c1 mx-2 h-8 p-2 rounded-md text-c1 font-semibold focus:outline-c1"
+                        className="border-2 outline-c1 h-8 p-2 rounded-md text-c1 font-semibold focus:outline-c1"
                         name="labour_cost"
                         value={inputData.labour_cost}
                     />
                 </div>
 
 
-                <div>
+                <div className="m-5 flex flex-col">
                     <label
                         htmlFor="payable_amount"
                         className="text-c1 font-bold">
@@ -261,15 +252,17 @@ function PurchaseUsingNormalKanta() {
                         disabled
                         id="payable_amount"
                         type="number"
-                        className="border-2 outline-c1 mx-2 h-8 p-2 rounded-md text-c1 font-semibold focus:outline-c1"
+                        className="border-2 outline-c1 h-8 p-2 rounded-md text-c1 font-semibold focus:outline-c1"
                         name="payable_amount"
                         value={inputData.payable_amount}
                     />
                 </div>
 
+
             </div>
 
-            <div className="flex justify-center m-5">
+
+            <div className="flex justify-center m-4">
                 <button
                     className="bg-c1 text-white p-4 rounded-lg hover:bg-c2"
                     onClick={() => handleClickSave()}

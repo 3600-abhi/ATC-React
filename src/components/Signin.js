@@ -54,13 +54,13 @@ function Signin() {
                     :
                     (
                         <div
-                            className="flex-col fixed top-1/4 left-1/3 p-10">
+                            className="border w-screen h-screen text-center flex flex-col justify-center align-middle">
 
-                            <h1 className="text-5xl m-5 text-c1 font-semibold">Login to your Account</h1>
+                            <h1 className="text-5xl m-8 text-c1 font-semibold">Login to your Account</h1>
 
-                            <div className="m-8 flex justify-center">
+                            <div className="m-3">
                                 <input
-                                    className="border-2 h-10 w-96 border-c1 p-3 rounded-lg text-c1 font-semibold"
+                                    className="border-2 h-10 w-96 outline-c1 p-3 rounded-lg text-c1 font-semibold"
                                     type="email"
                                     placeholder="Email"
                                     value={email}
@@ -68,9 +68,9 @@ function Signin() {
                                 />
                             </div>
 
-                            <div className="m-8 flex justify-center">
+                            <div className="m-3">
                                 <input
-                                    className="border-2 h-10 w-96 border-c1 p-3 rounded-lg text-c1 font-semibold"
+                                    className="border-2 h-10 w-96 outline-c1 p-3 rounded-lg text-c1 font-semibold"
                                     type="password"
                                     placeholder="Password"
                                     value={password}
@@ -78,7 +78,7 @@ function Signin() {
                                 />
                             </div>
 
-                            <div className="m-8 flex justify-center">
+                            <div  className="m-3">
                                 <button
                                     className="bg-c1 p-3 text-white rounded-md hover:bg-c2"
                                     onClick={() => handleSigninClick()}
